@@ -1,0 +1,83 @@
+import java.util.*;
+import java.io.*;
+
+public class Month{ 
+public static void main(String args []){ 
+
+Scanner sc = new Scanner(System.in); 
+System.out.print("Enter a year:"); 
+int year = sc.nextInt();
+
+System.out.print("Enter a month:"); 
+int month = sc.nextInt(); 
+
+int days = 0;
+
+
+boolean isLeapYear = (year % 4 == 0 && year % 100 != 0)||(year % 400 == 0); 
+switch (month){ 
+			case 1: 
+					days = 31; 
+					break; 
+			case 2: 
+					if (isLeapYear) 
+						days = 29; 
+					else 
+						days = 28; 
+					break; 
+			case 3: 
+					days = 31; 
+					break; 
+			case 4: 
+					days = 30; 
+					break; 
+			case 5: 
+					days = 31; 
+					break; 
+			case 6: 
+					days = 30; 
+					break; 
+			case 7: 
+					days = 31; 
+					break; 
+			case 8: 
+					days = 31; 
+					break; 
+			case 9: 
+					days = 30; 
+					break; 
+			case 10: 
+					days = 31; 
+					break; 
+			case 11: 
+					days = 30; 
+					break; 
+			case 12: 
+					days = 31; 
+					break; 
+			default: 
+						if ((month < 1)||(month > 12)) 
+						System.exit(0); 
+
+} 
+
+String response = "There are " +days+ " in month "+month+ " of " +year+ ".\n"; 
+System.out.println(response); 
+} 
+} 
+
+/*Output :--
+
+
+Enter a year:2016
+Enter a month:2
+There are 29 in month 2 of 2016.
+
+
+Output 2:---
+Enter a year:2013
+Enter a month:2
+There are 28 in month 2 of 2013.
+
+
+*/
